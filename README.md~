@@ -8,7 +8,7 @@ This is a testline to see if I have worked out branches.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+Another changed line to see what happens when I commit to only my branch.
 
 ```
 Give examples
