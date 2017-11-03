@@ -1,0 +1,109 @@
+d-172-25-98-53:Documents rohitmusti$ ls
+ALL CS					Backgrounds		College			Digital Editions	Github Stuff  Shennanigans  hackitalFall2017 rohitmusti.github.io
+d-172-25-98-53:Documents rohitmusti$ cd hackitalFall2017
+d-172-25-98-53:hackitalFall2017 rohitmusti$ git status
+On branch master
+
+Initial commit
+
+nothing to commit (create/copy files and use "git add" to track)
+d-172-25-98-53:hackitalFall2017 rohitmusti$ emacs README.md
+d-172-25-98-53:hackitalFall2017 rohitmusti$ open README.md
+d-172-25-98-53:hackitalFall2017 rohitmusti$ emacs README.md
+d-172-25-98-53:hackitalFall2017 rohitmusti$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+  README.md
+  README.md~
+
+nothing added to commit but untracked files present (use "git add" to track)
+d-172-25-98-53:hackitalFall2017 rohitmusti$ git add .
+d-172-25-98-53:hackitalFall2017 rohitmusti$ s
+-bash: s: command not found
+d-172-25-98-53:hackitalFall2017 rohitmusti$ ls
+README.md			README.md~
+d-172-25-98-53:hackitalFall2017 rohitmusti$ rm README.md
+d-172-25-98-53:hackitalFall2017 rohitmusti$ ls
+README.md~
+d-172-25-98-53:hackitalFall2017 rohitmusti$ emacs README.md~
+d-172-25-98-53:hackitalFall2017 rohitmusti$ ls
+README.md~
+d-172-25-98-53:hackitalFall2017 rohitmusti$ emacs README.md`
+> 
+d-172-25-98-53:hackitalFall2017 rohitmusti$ emacs README.md~
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Project Title
+
+One Paragraph of project description goes here
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+### Prerequisites
+
+What things you need to install the software and how to install them
+
+```
+Give examples
+```
+
+### Installing
+
+A step by step series of examples that tell you have to get a development env running
+
+Say what the step will be
+
+```
+Give the example
+```
+
+And repeat
+
+```
+until finished
+```
+
+End with an example of getting some data out of the system or using it for a little demo
+
+## Running the tests
+
+Explain how to run the automated tests for this system
+
+### Break down into end to end tests
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+
+### And coding style tests
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+-uu-:%%-F1  README.md~     ToC
