@@ -1,6 +1,6 @@
 # Hackital Fall 2017
 
-Welcome to Michael's branch!
+Welcome to Team Macaroni's Branch!
 
 ## Getting Started
 
