@@ -31,3 +31,15 @@ until finished
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
+
+#### Small Hed
+
+This should be the smallest and lowest subheading
+
+```
+some code might go here
+```
+
+### Now we are back to a big heading
+
+Big heading subtext
