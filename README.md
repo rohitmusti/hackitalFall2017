@@ -8,7 +8,7 @@ This is a testline to see if I have worked out branches.
 
 ### Prerequisites
 
-Another changed line to see what happens when I commit to only my branch.
+Here is Michael changing his branch!
 
 ```
 Give examples
