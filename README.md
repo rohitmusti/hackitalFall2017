@@ -1,6 +1,6 @@
 # Hackital Fall 2017
 
-One Paragraph of project description goes here
+Welcome to Michael's branch!
 
 ## Getting Started
 
