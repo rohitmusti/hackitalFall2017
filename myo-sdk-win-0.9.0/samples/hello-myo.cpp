@@ -3,10 +3,12 @@
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <iostream>
+#include <fstream>
 #include <iomanip>
 #include <stdexcept>
 #include <string>
 #include <algorithm>
+#include <string>
 using namespace std;
 
 // The only file that needs to be included to use the Myo C++ SDK is myo.hpp.
@@ -111,15 +113,20 @@ public:
     // For this example, the functions overridden above are sufficient.
 
     // We define this function to print the current values that were updated by the on...() functions above.
-    void print()
+    void print(ofstream file)
     {
         // Clear the current line
-        std::cout << '\r';
-		
+        //std::cout << '\r';
+		//std::cout << '\r';
 
         // Print out the orientation. Orientation data is always available, even if no arm is currently recognized.
 		std::cout << roll_w << ' ' << pitch_w << ' ' << yaw_w << ' ';
+		//std::cout << endl;
+		//std::cout << endl;
 
+		file << pitch_w;
+		
+		
         if (onArm) {
             // Print out the lock state, the currently recognized pose, and which arm Myo is being worn on.
 
@@ -128,13 +135,14 @@ public:
             // that we can fill the rest of the field with spaces below, so we obtain it as a string using toString().
             std::string poseString = currentPose.toString();
 
-            std::cout << (isUnlocked ? "o  " : "c  ") << (whichArm == myo::armLeft ? "L" : "R") << ' ' << poseString << "		";
+            //std::cout << (isUnlocked ? "o  " : "c  ") << (whichArm == myo::armLeft ? "L" : "R") << ' ' << poseString << "		";
         } else {
             // Print out a placeholder for the arm and pose when Myo doesn't currently know which arm it's on.
             //std::cout << '[' << std::string(8, ' ') << ']' << "[?]" << '[' << std::string(14, ' ') << ']';
         }
+		std::cout << std::flush;
 
-        std::cout << std::flush;
+        //
     }
 
     // These values are set by onArmSync() and onArmUnsync() above.
@@ -182,14 +190,18 @@ int main(int argc, char** argv)
     hub.addListener(&collector);
 
     // Finally we enter our main loop.
+	ofstream afile;
+	afile.open("out.txt");
     while (1) {
         // In each iteration of our main loop, we run the Myo event loop for a set number of milliseconds.
         // In this case, we wish to update our display 20 times a second, so we run for 1000/20 milliseconds.
         hub.run(1000/20);
         // After processing events, we call the print() member function we defined above to print out the values we've
         // obtained from any events that have occurred.
-        collector.print();
+
+        collector.print(afile);
     }
+	afile.close();
 
     // If a standard exception occurred, we print out its message and exit.
     } catch (const std::exception& e) {

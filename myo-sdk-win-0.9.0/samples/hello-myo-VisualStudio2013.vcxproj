@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\python.3.6.3\build\native\python.props" Condition="Exists('packages\python.3.6.3\build\native\python.props')" />
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -160,7 +161,22 @@
   <ItemGroup>
     <ClCompile Include="hello-myo.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="packages\SDL.redist.1.2.15.16\build\native\SDL.redist.targets" Condition="Exists('packages\SDL.redist.1.2.15.16\build\native\SDL.redist.targets')" />
+    <Import Project="packages\SDL.1.2.15.16\build\native\SDL.targets" Condition="Exists('packages\SDL.1.2.15.16\build\native\SDL.targets')" />
+    <Import Project="packages\python-embed.3.6.1.1\build\native\python-embed.targets" Condition="Exists('packages\python-embed.3.6.1.1\build\native\python-embed.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\SDL.redist.1.2.15.16\build\native\SDL.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\SDL.redist.1.2.15.16\build\native\SDL.redist.targets'))" />
+    <Error Condition="!Exists('packages\SDL.1.2.15.16\build\native\SDL.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\SDL.1.2.15.16\build\native\SDL.targets'))" />
+    <Error Condition="!Exists('packages\python-embed.3.6.1.1\build\native\python-embed.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\python-embed.3.6.1.1\build\native\python-embed.targets'))" />
+    <Error Condition="!Exists('packages\python.3.6.3\build\native\python.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\python.3.6.3\build\native\python.props'))" />
+  </Target>
 </Project>
